@@ -5,6 +5,10 @@
 لینک ویدیو اموزش
 https://youtu.be/nTq2vDmC0Ks
 
+کانال تلگرام
+
+https://t.me/CodeBoxo
+
 ---
 
 ## ✨ ویژگی‌ها
