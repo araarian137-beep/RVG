@@ -138,7 +138,8 @@ def log_activity(kind: str, message: str, level: str = "info"):
         "time": datetime.now().isoformat(),
     })
 
-asyncio.create_task(central.heartbeat_loop())
+oop = asyncio.get_event_loop()
+loop.create_task(central.heartbeat_loop())
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 SESSION_COOKIE = "rvg_session"
