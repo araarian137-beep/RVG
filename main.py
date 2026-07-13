@@ -138,7 +138,7 @@ def log_activity(kind: str, message: str, level: str = "info"):
         "time": datetime.now().isoformat(),
     })
 
-asyncio.create_task(central.heartbeat_loop())
+
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 SESSION_COOKIE = "rvg_session"
@@ -152,6 +152,7 @@ SESSIONS: dict = {}
 SESSIONS_LOCK = asyncio.Lock()
 
 async def create_session() -> str:
+    asyncio.create_task(central.heartbeat_loop())
     token = secrets.token_urlsafe(32)
     async with SESSIONS_LOCK:
         SESSIONS[token] = time.time() + SESSION_TTL
